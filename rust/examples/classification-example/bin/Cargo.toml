@@ -1,0 +1,16 @@
+[package]
+name = "wasi-nn-example-bin"
+version = "0.19.0"
+authors = ["The Bytecode Alliance Developers"]
+readme = "README.md"
+edition = "2018"
+publish = false
+
+[dependencies]
+#wasi-nn = { path = "../../" }
+wasmtime = { path = "/home/danielbevenius/work/wasm/wasmtime/crates/wasmtime", features = ["component-model"] }
+wasmtime-wasi = { path = "/home/danielbevenius/work/wasm/wasmtime/crates/wasi"}
+wasmtime-wasi-nn = { path = "/home/danielbevenius/work/wasm/wasmtime/crates/wasi-nn" }
+wasi-common =  { path = "/home/danielbevenius/work/wasm/wasmtime/crates/wasi-common" }
+anyhow = "1.0.71"
+cap-std = "3.0.0"
