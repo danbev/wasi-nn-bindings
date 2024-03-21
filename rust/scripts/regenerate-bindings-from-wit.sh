@@ -21,6 +21,7 @@ WASI_NN_REVISION=${WASI_NN_REVISION:-e2310b860db2ff1719c9d69816099b87e85fabdb}
 
 echo "=== Retrieve and build 'wit-bindgen' ==="
 TMP_DIR=$(mktemp -d /tmp/regenerate-bindings.XXXXXX)
+cp wasi-nn.wit $TMP_DIR/wasi-nn.wit
 pushd $TMP_DIR
 # This block attempts to retrieve the least amount of Git history while allowing the user to pick
 # any revision.
@@ -34,7 +35,7 @@ popd
 
 echo
 echo "=== Retrieve the wasi-nn specification as WIT ==="
-curl ${WASI_NN_RAW_URL}/${WASI_NN_REVISION}/wit/wasi-nn.wit --output ${TMP_DIR}/wasi-nn.wit
+#curl ${WASI_NN_RAW_URL}/${WASI_NN_REVISION}/wit/wasi-nn.wit --output ${TMP_DIR}/wasi-nn.wit
 
 echo
 echo "=== Overwrite the 'src/generated.rs' file ==="
